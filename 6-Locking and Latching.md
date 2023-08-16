@@ -23,3 +23,12 @@ I tend to use the version column approach with a timestamp column. It gives me t
 
 If I had to add optimistic concurrency controls to a table that was still being used with a pessimistic locking scheme (e.g., the table was accessed in both client/server applications and over the Web), I would opt for the ORA_HASH approach. The reason is that the existing legacy application might not appreciate a
 new column appearing.
+
+## Lock Types
+### DML Locks
+DML (Data Manipulation Language), in general, it means SELECT, INSERT, UPDATE, MERGE, and DELETE statements.
+
+DML锁机制允许并发执行数据修改。DML锁确保一次只有一个人能修改某一行，而且别人这时不能删除这个表
+### DDL Locks
+DDL(Data Defintion Language), such as CREATE and ALTER statements.
+### Internal locks and latches
